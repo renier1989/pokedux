@@ -3,10 +3,10 @@ import {StarIcon} from '@heroicons/react/24/outline';
 function PokemonCard({pokemon}) {
   return (
     <>
-      <div className="container px-5 py-12 mx-auto">
+      <div className="container px-5 py-12 mx-auto ">
         <div className="flex flex-wrap -m-4">
           <div className="p-4">
-            <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden">
+            <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden  bg-cover bg-white bg-opacity-70">
               {/* <img
                 src="https://dummyimage.com/720x400"
                 alt=""
