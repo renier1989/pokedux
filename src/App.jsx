@@ -2,11 +2,14 @@ import getPokemo from "./Api";
 import "./App.css";
 import PokemonList from "./Components/PokemonList";
 import Searcher from "./Components/Searcher";
+import { setPokemons as setPokemonsActions } from "./actions";
 import {useEffect, useState } from 'react';
+import { connect } from "react-redux";
 
-function App() {
+function App({pokemons, setPokemons}) {
+console.log("🚀 ~ file: App.jsx:10 ~ App ~ pokemons:", pokemons)
 
-  const [pokemons ,setPokemons ]  = useState([]);
+  // const [pokemons ,setPokemons ]  = useState([]);
 
   useEffect(()=>{
     // crate an Async function to fetch Pokemon from the api
@@ -27,4 +30,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state => ({
+  pokemons: state.pokemons,
+})) 
+
+const mapDispatchToProps = (dispatch) => ({
+  setPokemons: (value) => dispatch(setPokemonsActions(value)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
