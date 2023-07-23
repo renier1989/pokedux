@@ -7,4 +7,10 @@ const getPokemo = () => {
     .catch(err => console.log(err));
 }
 
-export default getPokemo
+const getPokemonDetails = (pokemon) => {
+    return axios.get(pokemon.url)
+    .then(res => res.data)
+    .catch(err => console.log(err));
+}
+
+export { getPokemo, getPokemonDetails }

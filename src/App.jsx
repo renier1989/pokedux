@@ -1,4 +1,4 @@
-import getPokemo from "./Api";
+import {getPokemo, getPokemonDetails, } from "./Api";
 import "./App.css";
 import PokemonList from "./Components/PokemonList";
 import Searcher from "./Components/Searcher";
@@ -19,7 +19,9 @@ function App() {
     // crate an Async function to fetch Pokemon from the api
     const fetchPokemons = async () => {
       const pokemonsRes = await getPokemo();
-      dispatch(setPokemons(pokemonsRes));
+      const pokemonsDetailed = await Promise.all(pokemonsRes.map(pokemon => getPokemonDetails(pokemon)));
+      // dispatch(setPokemons(pokemonsRes));
+      dispatch(setPokemons(pokemonsDetailed));
     };
 
     fetchPokemons();

@@ -1,6 +1,8 @@
 import {StarIcon} from '@heroicons/react/24/outline';
 
 function PokemonCard({pokemon}) {
+  // console.log("🚀 ~ file: PokemonCard.jsx:4 ~ PokemonCard ~ pokemon:", pokemon)
+  
   return (
     <>
       <div className="container px-5 py-12 mx-auto ">
@@ -13,16 +15,17 @@ function PokemonCard({pokemon}) {
                 className="lg:h-48 md:h-36 w-full object-cover object-center"
               /> */}
               <img className="lg:h-48 md:h-36 w-full object-cover object-center" 
-              
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" 
-              alt="" />
+              src={pokemon.sprites.front_default} 
+              alt={pokemon.name} />
               <div className="p-6">
-                <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+                <h1 className="title-font text-lg font-medium text-slate-600 mb-3">
                   {pokemon.name}
-                </h2>
-                <h1 className="title-font text-lg font-medium text-white mb-3">
-                  The Catalyzer
                 </h1>
+                <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-3 flex gap-2">
+                  {pokemon.types.map(type => (
+                    <p>{type.type.name}</p>
+                  ))}
+                </h2>
                 <p className="leading-relaxed mb-3">
                   Photo booth fam kinfolk cold-pressed sriracha leggings
                   jianbing microdosing tousled waistcoat.
