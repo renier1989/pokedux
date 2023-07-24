@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import thunk from 'redux-thunk'
-import { pokemonsReducer } from './actions/reducers/pokemons.js'
 import { Provider } from 'react-redux'
 import { applyMiddleware, compose, legacy_createStore as createStore} from 'redux'
 import { logger } from './Middleware/index.js'
+import { pokemonsReducer } from './reducers/pokemons.js'
 
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

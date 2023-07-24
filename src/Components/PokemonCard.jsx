@@ -22,8 +22,8 @@ function PokemonCard({pokemon}) {
                   {pokemon.name}
                 </h1>
                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-3 flex gap-2">
-                  {pokemon.types.map(type => (
-                    <p>{type.type.name}</p>
+                  {pokemon.types.map((type, index) => (
+                    <p key={index}>{type.type.name}</p>
                   ))}
                 </h2>
                 <p className="leading-relaxed mb-3">
