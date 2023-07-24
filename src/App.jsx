@@ -2,7 +2,7 @@ import {getPokemo, getPokemonDetails, } from "./Api";
 import "./App.css";
 import PokemonList from "./Components/PokemonList";
 import Searcher from "./Components/Searcher";
-import { setPokemons } from "./actions";
+import { getPokemonsWithDetails, setPokemons } from "./actions";
 import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -19,9 +19,9 @@ function App() {
     // crate an Async function to fetch Pokemon from the api
     const fetchPokemons = async () => {
       const pokemonsRes = await getPokemo();
-      const pokemonsDetailed = await Promise.all(pokemonsRes.map(pokemon => getPokemonDetails(pokemon)));
+      // const pokemonsDetailed = await Promise.all(pokemonsRes.map(pokemon => getPokemonDetails(pokemon)));
       // dispatch(setPokemons(pokemonsRes));
-      dispatch(setPokemons(pokemonsDetailed));
+      dispatch(getPokemonsWithDetails(pokemonsRes));
     };
 
     fetchPokemons();
