@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'logo': "url('/public/fondo.svg')",
-        'logo2': "url('/public/fondo2.svg')",
+        'logo': "url('/public/logo.png')",
+        'fondo': "url('/public/fondo.svg')",
+        'fondo2': "url('/public/fondo2.svg')",
         'eco-1': "url('/public/bg-eco-1.svg')",
         'loading': "url('/public/loading.svg')",
     },

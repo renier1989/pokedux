@@ -6,13 +6,13 @@ import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { applyMiddleware, compose, legacy_createStore as createStore} from 'redux'
 import { logger } from './Middleware/index.js'
-import { pokemonsReducer } from './reducers/pokemons.js'
+import rootReducer from './reducers/rootReducer.js'
 
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const composeEnhancers = composeAlt(applyMiddleware(thunk,logger));
 
-const store = createStore(pokemonsReducer ,composeEnhancers);
+const store = createStore(rootReducer ,composeEnhancers);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 

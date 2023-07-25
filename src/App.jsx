@@ -4,15 +4,15 @@ import PokemonList from "./Components/PokemonList";
 import Searcher from "./Components/Searcher";
 import { getPokemonsWithDetails, setLoading } from "./actions";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { ReactComponent as LoadingSVG } from "../public/loading.svg";
 
 function App() {
   // function App({ pokemons, setPokemons }) {
   // console.log("🚀 ~ file: App.jsx:10 ~ App ~ pokemons:", pokemons);
 
-  const pokemons = useSelector((state) => state.pokemons);
-  const loading = useSelector((state) => state.loading);
+  const pokemons = useSelector((state) => state.data.pokemons , shallowEqual);
+  const loading = useSelector((state) => state.ui.loading);
   const dispatch = useDispatch();
 
   // const [pokemons ,setPokemons ]  = useState([]);
@@ -32,8 +32,10 @@ function App() {
   return (
     <>
       <div className=" h-screen overflow-y-scroll sm:px-32 px-6">
+        
         <div className="flex items-center justify-center">
-          <img className="object-cover" src="../public/logo.png" alt="" />
+          {/* <div className="w-[50%] h-[20vh] bg-logo bg-cover bg-no-repeat flex items-center  justify-center"></div> */}
+          <img className="bg-cover object-cover" src="../public/logo.png" alt="" />
         </div>
         <Searcher />
         {loading ? (
