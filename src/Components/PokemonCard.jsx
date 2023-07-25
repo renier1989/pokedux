@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { StartButton } from "./StartButton";
-import { setFavorite } from "../actions";
+import { setFavorite } from "../Slices/dataSlice";
+// import { setFavorite } from "../actions";
 
 
 function PokemonCard({pokemon}) {

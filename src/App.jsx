@@ -1,11 +1,10 @@
-import { getPokemo } from "./Api";
 import "./App.css";
 import PokemonList from "./Components/PokemonList";
 import Searcher from "./Components/Searcher";
-import { getPokemonsWithDetails, setLoading } from "./actions";
 import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { ReactComponent as LoadingSVG } from "../public/loading.svg";
+import { fetchPokemonsWithDetails } from "./Slices/dataSlice";
 
 function App() {
   // function App({ pokemons, setPokemons }) {
@@ -18,15 +17,16 @@ function App() {
   // const [pokemons ,setPokemons ]  = useState([]);
 
   useEffect(() => {
+    dispatch(fetchPokemonsWithDetails());
     // crate an Async function to fetch Pokemon from the api
-    const fetchPokemons = async () => {
-      dispatch(setLoading(true));
-      const pokemonsRes = await getPokemo();
-      dispatch(getPokemonsWithDetails(pokemonsRes));
-      dispatch(setLoading(false));
-    };
+    // const fetchPokemons = async () => {
+    //   dispatch(setLoading(true));
+    //   const pokemonsRes = await getPokemo();
+    //   dispatch(getPokemonsWithDetails(pokemonsRes));
+    //   dispatch(setLoading(false));
+    // };
 
-    fetchPokemons();
+    // fetchPokemons();
   }, []);
 
   return (

@@ -1,5 +1,5 @@
 export const logger = (store) => (next) => (action) => {
-    // console.log("🚀 Middleware Logger:", action);
+    console.log("🚀 Middleware Logger:", action);
     next(action);
 }
 
