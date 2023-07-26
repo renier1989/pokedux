@@ -10,7 +10,14 @@ function App() {
   // function App({ pokemons, setPokemons }) {
   // console.log("🚀 ~ file: App.jsx:10 ~ App ~ pokemons:", pokemons);
 
-  const pokemons = useSelector((state) => state.data.pokemons , shallowEqual);
+  // const pokemons = useSelector((state) => state.data.pokemons , shallowEqual);
+  // const pokemonsFiltered = useSelector((state) => state.data.pokemonsFiltered , shallowEqual);
+  const pokemonsToShow = useSelector((state) => {
+    return state.data.search ? state.data.pokemonsFiltered : state.data.pokemons;
+  },shallowEqual)
+
+  // const pokemonsToShow = pokemonsFiltered.length > 0 ? pokemonsFiltered : pokemons;
+
   const loading = useSelector((state) => state.ui.loading);
   const dispatch = useDispatch();
 
@@ -43,7 +50,7 @@ function App() {
             <LoadingSVG />
           </div>
         ) : (
-          <PokemonList pokemons={pokemons} />
+          <PokemonList pokemons={pokemonsToShow}  />
         )}
 
         {/* <PokemonCard /> */}
