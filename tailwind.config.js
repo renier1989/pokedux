@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'logo': "url('/public/logo.png')",
-        'fondo': "url('/public/fondo.svg')",
-        'fondo2': "url('/public/fondo2.svg')",
-        'eco-1': "url('/public/bg-eco-1.svg')",
-        'loading': "url('/public/loading.svg')",
-        'not-found': "url('/public/notfound.svg')",
+        'logo': "url('../logo.png')",
+        'fondo': "url('../fondo.svg')",
+        'fondo2': "url('../fondo2.svg')",
+        'eco-1': "url('../bg-eco-1.svg')",
+        'loading': "url('../loading.svg')",
+        'not-found': "url('../notfound.png')",
     },
     },
     screens: {

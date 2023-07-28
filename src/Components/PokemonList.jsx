@@ -12,9 +12,10 @@ function PokemonList({pokemons}) {
                 return  <PokemonCard pokemon={pokemon} key={pokemon.id} />;
             }) 
           ):(
-            <div className="items-center justify-center mx-auto">
+            <div className="w-full h-40 items-center justify-center mx-auto">
               <p className="text-lg font-semibold text-gray-500">Sorry we could't catch any pokemon</p>
-              <img className="w-60 h-full" src="../../public/notfound.png" alt="" />
+              <div className="w-full h-full rounded-sm  bg-cover bg-center bg-not-found"></div>
+              {/* <img className="w-60 h-full" src="../notfound.png" alt="" /> */}
             </div>
             
           )

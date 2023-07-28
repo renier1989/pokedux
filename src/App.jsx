@@ -40,9 +40,10 @@ function App() {
     <>
       <div className=" h-screen overflow-y-scroll sm:px-32 px-6">
         
-        <div className="flex items-center justify-center">
+        <div className="w-full h-40">
+          <div className="w-full h-full rounded-sm bg-no-repeat bg-center bg-logo"></div>
           {/* <div className="w-[50%] h-[20vh] bg-logo bg-cover bg-no-repeat flex items-center  justify-center"></div> */}
-          <img className="bg-cover object-cover" src="../public/logo.png" alt="" />
+          {/* <img className="bg-cover object-cover" src="../logo.png" alt="" /> */}
         </div>
         <Searcher />
         {loading ? (
